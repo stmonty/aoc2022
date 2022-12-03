@@ -2,7 +2,6 @@ module Main where
 import Control.Monad (join)
 import Data.List
 
-
 parseInput :: String -> [(Char, Char)]
 parseInput s = let
   lined = lines s
@@ -33,9 +32,8 @@ checkGame (x,y)
   | otherwise = 0
 
 finalGameScore :: [(Int, Int)] -> [Int]
-finalGameScore [] = []
-finalGameScore (x:xs) = ((snd x) + checkGame x) : finalGameScore xs
-    
+finalGameScore xs = map (\ x -> (snd x) + checkGame x) xs
+
 main :: IO ()
 main = do
   parsedContent <- parseInput <$> readFile "inputs/input2.txt"
