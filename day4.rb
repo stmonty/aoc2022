@@ -16,26 +16,12 @@ def solve2 (arr)
   (r1.first <= r2.last) and (r2.first <= r1.last)
 end
 
-a = []
-lines.each do |x|
-  a.push(solve(x))
-end
-ans1 = 0
-a.each do |b|
-  if b
-    ans1 += 1
-  end
-end
-
-w = []
-lines.each do |x|
-  w.push(solve2(x))
-end
-ans2 = 0
-w.each do |z|
-  if z
-    ans2 += 1
-  end
-end
+ans1 = lines.map {|df| solve(df)}
+ans1 = ans1.filter {|sd| sd}.length
 puts ans1
+
+ans2 = lines.map {|df| solve2(df)}
+ans2 = ans2.filter {|sd| sd}.length
 puts ans2
+
+

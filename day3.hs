@@ -3,11 +3,6 @@ import Control.Monad (join)
 import Data.List
 import Data.Char
 
-splitHalf :: [a] -> ([a], [a])
-splitHalf [] = ([], [])
-splitHalf [x] = ([x], [])
-splitHalf (x:y:xys) = (x:xs, y:ys) where (xs, ys) = splitHalf xys
-
 splitHalf2 :: [a] -> ([a], [a])
 splitHalf2 [] = ([], [])
 splitHalf2 [x] = ([x], [])
