@@ -73,23 +73,18 @@ def part2(moves)
 end
 
 moves = []
-h = [0,0]
 lines.each do |line|
   line = line.gsub(/\n/, "").split(" ")
   (0...line[1].to_i).each do |_|
     case line[0]
     when 'U'
       moves << [-1, 0]
-      h = [h[0] - 1, h[1]]
     when 'D'
       moves << [1, 0]
-      h = [h[0] + 1, h[1]]
     when 'L'
       moves << [0, -1]
-      h = [h[0], h[1] - 1]
     when 'R'
       moves << [0, 1]
-      h = [h[0], h[1] + 1]
     end
   end
 end
